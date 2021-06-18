@@ -382,7 +382,7 @@ int sig;
 FILE *open_temp_file()
 {
     int fd;
-    long n = getpid();
+    long n = getpid(void);
     FILE *tempf;
     boolean remove_temp_file();
 
@@ -587,7 +587,7 @@ const char *base_cpp_cmd;
 	if (verbose)	print_includes(stderr);
 	fprintf(tempf,"#line 1 \"stdin\"\n");
 
-	while ((c = getchar()) != EOF)
+	while ((c = getchar(void)) != EOF)
 	    putc(c,tempf);
 
 	if (fclose(tempf) == EOF)
