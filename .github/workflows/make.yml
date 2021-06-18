@@ -19,8 +19,9 @@ jobs:
       run: |
         cc --version
         echo $CFLAGS
-        CFLAGS=''
-        cc -o gccvers ./.github/gccvers.c
+        CFLAGS="$CFLAGS -Wno-error"
+        echo $CFLAGS 
+        cc $(CFLAGS) -o gccvers ./.github/gccvers.c
         ./gccvers
     - name: Configure
       run: ./Configure -dE
