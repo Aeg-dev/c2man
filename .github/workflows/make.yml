@@ -30,6 +30,6 @@ jobs:
         sh flatten.SH
         sh Makefile.SH
     - run: |
-        make CFLAGS='-Wall -Wno-error' depend
-        make CFLAGS='-Wall -Wno-error'
+        make depend
+        make YACC='yacc -Wno-error' CFLAGS='-Wno-error'
         make install
