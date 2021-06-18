@@ -15,17 +15,10 @@ jobs:
     
     env:
       CFLAGS: -std=c99
+      cc: cc="cc -std=c99 -Wno-error"
 
     steps:
     - uses: actions/checkout@v2
-    - name: cc test
-      run: |
-        cc --version  
-        echo $CFLAGS
-        CFLAGS="$CFLAGS -Wno-error"
-        echo $CFLAGS 
-        cc -Wno-error=implicit-function-declaration -o gccvers ./.github/gccvers.c
-        ./gccvers
     - name: Configure
       run: ./Configure -dE
     - name: install
