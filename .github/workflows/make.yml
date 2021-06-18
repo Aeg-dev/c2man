@@ -24,7 +24,7 @@ jobs:
         echo $CFLAGS
         CFLAGS="$CFLAGS -Wno-error"
         echo $CFLAGS 
-        cc -Wno-error -o gccvers ./.github/gccvers.c
+        cc -Wno-error=implicit-function-declaration -o gccvers ./.github/gccvers.c
         ./gccvers
     - name: Configure
       run: ./Configure -dE
