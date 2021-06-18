@@ -2,7 +2,7 @@ name: Build with make
 
 on:
   push:
-    branches: [ master, test-ci ]
+    branches: [ master, test-ci, ci-run ]
   pull_request:
     branches: [ master ]
 
