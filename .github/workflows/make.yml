@@ -11,17 +11,20 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy: 
       matrix:
-        os: [ubuntu-latest, macos-latest]  
+        os: [macos-latest]  
+    
+    env:
+      CFLAGS: -Wno-error
 
     steps:
     - uses: actions/checkout@v2
     - name: cc test
       run: |
-        cc --version
+        cc --version  
         echo $CFLAGS
         CFLAGS="$CFLAGS -Wno-error"
         echo $CFLAGS 
-        cc $(CFLAGS) -o gccvers ./.github/gccvers.c
+        cc -Wno-error -o gccvers ./.github/gccvers.c
         ./gccvers
     - name: Configure
       run: ./Configure -dE
