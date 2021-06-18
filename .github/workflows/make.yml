@@ -14,8 +14,8 @@ jobs:
         os: [macos-latest]  
 
     env:
-      CFLAGS: -O2 -g
-      # cc: gcc-10
+      ccflags: -O2 -g
+
     steps:
     - uses: actions/checkout@v2
     - name: Configure
