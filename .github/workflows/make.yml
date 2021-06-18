@@ -15,6 +15,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: cc test
+      run: |
+        cc --version
+        cc -o gccvers ./.github/gccvers.c
+        ./gccvers
     - name: Configure
       run: ./Configure -dE
     - name: install
