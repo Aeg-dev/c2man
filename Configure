@@ -2070,6 +2070,7 @@ echo " "
 echo "Checking for GNU cc in disguise and/or its version number..." >&4
 $cat >gccvers.c <<EOM
 #include <stdio.h>
+#include <stdlib.h>
 int main() {
 #ifdef __GNUC__
 #ifdef __VERSION__
@@ -2560,6 +2561,7 @@ and I got the following output:
 EOM
 $cat > try.c <<'EOF'
 #include <stdio.h>
+#include <stdlib.h>
 main() { exit(0); }
 EOF
 dflt=y
@@ -3225,6 +3227,7 @@ case "$d_access" in
 	echo " "
 	$cat >access.c <<'EOCP'
 #include <sys/types.h>
+#include <stdlib.h>
 #ifdef I_FCNTL
 #include <fcntl.h>
 #endif
@@ -3546,6 +3549,7 @@ eval $inlibc
 echo " "
 $cat >open3.c <<'EOCP'
 #include <sys/types.h>
+#include <stdlib.h>
 #ifdef I_FCNTL
 #include <fcntl.h>
 #endif
@@ -4386,6 +4390,7 @@ echo "Testing to see if we should include <time.h>, <sys/time.h> or both." >&4
 $echo $n "I'm now running the test program...$c"
 $cat >try.c <<'EOCP'
 #include <sys/types.h>
+#include <stdlib.h>
 #ifdef I_TIME
 #include <time.h>
 #endif
