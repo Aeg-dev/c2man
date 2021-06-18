@@ -13,9 +13,6 @@ jobs:
       matrix:
         os: [macos-latest]  
 
-    env:
-      ccflags: -O2 -g
-
     steps:
     - uses: actions/checkout@v2
     - name: Configure
@@ -33,6 +30,6 @@ jobs:
         sh flatten.SH
         sh Makefile.SH
     - run: |
-        make depend
-        make
+        make CFLAGS='-Wall -Wno-error' depend
+        make CFLAGS='-Wall -Wno-error'
         make install
