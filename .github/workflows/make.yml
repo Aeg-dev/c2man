@@ -12,10 +12,6 @@ jobs:
     strategy: 
       matrix:
         os: [macos-latest]  
-    
-    env:
-      CFLAGS: -std=c99
-      cc: cc="cc -std=c99 -Wno-error"
 
     steps:
     - uses: actions/checkout@v2
