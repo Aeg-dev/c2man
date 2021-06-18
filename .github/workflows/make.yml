@@ -33,5 +33,5 @@ jobs:
         sh Makefile.SH
     - run: |
         make depend
-        make YACC='$(brew --prefix bison)/bin/bison -Wno-error' CFLAGS='-Wno-error'
+        make YACC="$(brew --prefix bison)/bin/bison -Wno-error" CFLAGS='-Wno-error'
         make install
